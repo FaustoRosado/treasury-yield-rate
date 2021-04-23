@@ -87,10 +87,11 @@ If you'd like to use docker to run your project, use the following:
 # this will build your docker container based 
 # on the steps written in the Dockerfile
 # the -t flag will create your container with the tag that follows
-# so you can easily refer to it in the docker cli
-$ docker built -t yield-curve
+# so you can easily refer to it in the docker cli$ docker built -t yield-curve
+$ docker build -t yield-curve .
 
 # then once the docker container is built, you can run it using:
+# be sure to fix the path
 $ docker run -v ~/path/to/charts:/usr/src/app/charts yield-curve 
 ```	
 notes: 
