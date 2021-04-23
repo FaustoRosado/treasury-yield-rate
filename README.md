@@ -1,5 +1,7 @@
 # Yield Curve Project
 
+Project template for [Week-29-Project](https://github.com/The-Knowledge-House/I2020_DS/blob/master/week-029/week-29-project.ipynb)
+
 ## Setup
 
 ### Forking this repo.
@@ -10,7 +12,7 @@ Since forking is not a `git` operation, you can either fork this project on gith
 # first make sure you create a repo on github
 
 # then clone this repo
-$ git clone https://www.github.com
+$ git clone https://www.github.com/newstudent718/yield-curve.git
 
 # rename the 'origin' remote to 'upstream'
 $ git remote rename origin upstream
@@ -22,8 +24,8 @@ $ git remote add origin https://github.com/<username>/<repo>.git
 $ git remote -v
 origin https://github.com/<username>/<repo>.git (fetch)
 origin https://github.com/<username>/<repo>.git (push)
-upstream   https://github.com/
-upstream   https://github.com/
+upstream   https://github.com/newstudent718/yield-curve.git
+upstream   https://github.com/newstudent718/yield-curve.git
 ```
 
 ### Setting up your environment.
