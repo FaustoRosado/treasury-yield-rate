@@ -24,21 +24,35 @@ def scrape_data(url):
 
     yield_curve_10_2['10yr - 2yr'] = yield_curve_10_2['10 yr'] - yield_curve_10_2['2 yr']
 
-    print(yield_curve_10_2)
+    return yield_curve_10_2
     #req = requests.get("https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield")
     #soup = bs(req.text)
 
 def make_chart(data, filename):
     print("generating matplotlib chart")
-    plt.plot(data)
+    data = scrape_data(url)
+
+    plt.style.use('ggplot')
+    plt.figure(figsize=(12, 10))
+    # plt.plot(yield_curve_10_2['date'], yield_curve_10_2['10 yr'], yield_curve_10_2['2 yr'])
+    plt.plot(data['date'], data['10 yr'], "-b", label="10 year")
+    plt.plot(data['date'], data['2 yr'], "-r", label="2 year")
+
+    plt.title('10 year & 2 year Treasury Rates for April 2021')
+    plt.xlabel('Date')
+    plt.xticks(rotation=60, fontsize='medium')
+    plt.ylabel('Interest Rate')
+    plt.legend()
+    # plt.show()
+    # plt.plot(data)
     plt.savefig(f'charts/{filename}.png')
     print("completed")
 
 def main():
-    scrape_data(url)
+    data = scrape_data(url)
     dt_now = dt.datetime.now()
     dt_fmt = dt_now.strftime("%m-%d-%y-%H%M%S")
-    make_chart(np.arange(10), f'test-{dt_fmt}')
+    make_chart(np.arange(10), f'10_2-yield-curve-{dt_fmt}')
 
 if __name__ == '__main__':
     main()
