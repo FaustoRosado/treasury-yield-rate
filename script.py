@@ -8,12 +8,13 @@ import numpy as np
 import pandas as pd
 import requests
 
+
 url = 'https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield'
 
 def scrape_data(url):
     print("scraping")
     
-    yield_curve = pd.read_html(url, parse_dates = True) 
+    yield_curve = pd.read_html(url) 
     yield_curve = yield_curve[1].dropna(how = 'any')
 
     yield_curve_10_2 = yield_curve.iloc[:,[0,6,10]]
@@ -23,7 +24,7 @@ def scrape_data(url):
 
     yield_curve_10_2['10yr - 2yr'] = yield_curve_10_2['10 yr'] - yield_curve_10_2['2 yr']
 
-    return yield_curve_10_2
+    print(yield_curve_10_2)
     #req = requests.get("https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield")
     #soup = bs(req.text)
 
