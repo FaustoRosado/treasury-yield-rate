@@ -5,6 +5,7 @@ import datetime as dt
 from bs4 import BeautifulSoup as bs
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 import requests
 
 url = 'https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield'
@@ -33,7 +34,7 @@ def make_chart(data, filename):
     print("completed")
 
 def main():
-    scrape_data()
+    scrape_data(url)
     dt_now = dt.datetime.now()
     dt_fmt = dt_now.strftime("%m-%d-%y-%H%M%S")
     make_chart(np.arange(10), f'test-{dt_fmt}')
