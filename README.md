@@ -7,7 +7,6 @@ The 10-2 Treasury Yield Spread is the difference between the 10 year treasury ra
 
 Using data scraped from [United States Treasury.](https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield')
 
-![10-2 Yield Curve April 2021](charts\10_2-yield-curve-05-03-21-012146.png)
 
 ## Setup
 
