@@ -40,13 +40,27 @@ def make_chart(data, filename):
 
     plt.title('10 year & 2 year Treasury Rates for April 2021')
     plt.xlabel('Date')
-    plt.xticks(rotation=60, fontsize='medium')
+    plt.xticks(rotation=45, fontsize='medium')
     plt.ylabel('Interest Rate')
     plt.legend()
     # plt.show()
     # plt.plot(data)
     plt.savefig(f'charts/{filename}.png')
     print("completed")
+
+    plt.style.use('ggplot')
+    plt.figure(figsize=(12, 10))
+    plt.plot(data['date'], data['10yr - 2yr'], 'g--', label='10-2 Yr Spread')
+    plt.title('10-2 Treasury Yield Spread for April 2021')
+    plt.xlabel('Date')
+    plt.xticks(rotation=45, fontsize='medium')
+    plt.ylabel('10-2 Spread')
+    plt.legend()
+    
+
+    plt.savefig(f'charts/{filename}.png')
+    print("completed")
+
 
 def main():
     data = scrape_data(url)
