@@ -1,6 +1,13 @@
 # Yield Curve Project
 
-Project template for [Week-29-Project](https://github.com/The-Knowledge-House/I2020_DS/blob/master/week-029/week-29-project.ipynb)
+
+The 10-2 Treasury Yield Spread is the difference between the 10 year treasury rate and the 2 year treasury rate. A 10-2 treasury spread that approaches 0 signifies a "flattening" yield curve. A negative 10-2 yield spread has historically been viewed as a precursor to a recessionary period. A negative 10-2 spread has predicted every recession from 1955 to 2018, but has occurred 6-24 months before the recession occurring, and is thus seen as a far-leading indicator. The 10-2 spread reached a high of 2.91% in 2011, and went as low as -2.41% in 1980.
+
+10-2 Year Treasury Yield Spread is at 1.49%, compared to 1.49% the previous market day and 0.44% last year. This is higher than the long term average of 0.93%.
+
+Using data scraped from [United States Treasury Yield Rates](https://www.treasury.gov/resource-center/data-chart-center/interest-rates/Pages/TextView.aspx?data=yield')
+
+![10-2 Yield Curve April 2021](charts\10_2-yield-curve-05-03-21-012146.png)
 
 ## Setup
 
@@ -12,7 +19,7 @@ Since forking is not a `git` operation, you can either fork this project on gith
 # first make sure you create a repo on github
 
 # then clone this repo
-$ git clone https://www.github.com/newstudent718/yield-curve.git
+$ git clone https://www.github.com/FaustoRosado/treasury-yield-rate.git
 
 # rename the 'origin' remote to 'upstream'
 $ git remote rename origin upstream
